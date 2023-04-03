@@ -15,7 +15,7 @@ import java.util.Objects;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/home"}, method = RequestMethod.GET)
     public String homePage(Model model) {
         List<PostTypeDto> postTypeDtoList = new ArrayList<>();
         PostTypeDto java = PostTypeDto.builder().name("java").type("java").description("language java").build();
@@ -29,7 +29,7 @@ public class MainController {
         return "homePage";
     }
 
-    @RequestMapping(value = {"/{type}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/main/{type}"}, method = RequestMethod.GET)
     public String getTypePost(Model model, @PathVariable String type) {
         List<PostDto> postDtoList = new ArrayList<>();
         if (type.equalsIgnoreCase("java")) {
@@ -52,7 +52,7 @@ public class MainController {
         return "typePage";
     }
 
-    @RequestMapping(value = {"/{type}/{url}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/main/{type}/{url}"}, method = RequestMethod.GET)
     public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
         if (url.equalsIgnoreCase("begin-java1")) {
 

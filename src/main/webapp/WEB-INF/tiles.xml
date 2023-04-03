@@ -63,5 +63,22 @@
         <put-attribute name="body" value="/WEB-INF/body-page/403.jsp"/>
 
     </definition>
+    <definition name="accountPage" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/body-page/bank/accountsPage.jsp"/>
+
+    </definition>
+    <definition name="sendMoneyPage" extends="layout.basic">
+        <put-attribute name="title" value="Contact Us"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/bank/sendMoneyPage.jsp"/>
+
+    </definition>
+    <definition name="postTypePage" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/body-page/post/postTypePage.jsp"/>
+
+    </definition>
+    <definition name="listPostPage" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/body-page/post/listPostPage.jsp"/>
+
+    </definition>
 
 </tiles-definitions>
