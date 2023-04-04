@@ -17,6 +17,7 @@ public class MainController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String homePage(Model model) {
+        model.addAttribute("showMenu", false);
         List<PostTypeDto> postTypeDtoList = new ArrayList<>();
         PostTypeDto java = PostTypeDto.builder().name("java").type("java").description("language java").build();
         PostTypeDto css = PostTypeDto.builder().name("css").type("css").description("language css").build();
@@ -31,6 +32,7 @@ public class MainController {
 
     @RequestMapping(value = {"/{type}"}, method = RequestMethod.GET)
     public String getTypePost(Model model, @PathVariable String type) {
+        model.addAttribute("showMenu", true);
         List<PostDto> postDtoList = new ArrayList<>();
         if (type.equalsIgnoreCase("java")) {
             PostDto java1 = PostDto.builder().id(1).name("begin java 1").url("begin-java1").build();
@@ -54,6 +56,7 @@ public class MainController {
 
     @RequestMapping(value = {"/{type}/{url}"}, method = RequestMethod.GET)
     public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
+        model.addAttribute("showMenu", true);
         if (url.equalsIgnoreCase("begin-java1")) {
 
             model.addAttribute("postDetail", PostDto.builder().id(1).name("begin java 1").url("begin-java1").
