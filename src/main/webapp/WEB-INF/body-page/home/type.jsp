@@ -3,7 +3,7 @@
 <div class="list-post">
     <c:forEach items="${listPost}" var="post">
         <div>
-            <div><a href="${pageContext.request.contextPath}/${type}/${post.url}">${post.name}</a></div>
+            <div><a href="${pageContext.request.contextPath}/post/${type}/${post.url}">${post.name}</a></div>
         </div>
     </c:forEach>
 </div>

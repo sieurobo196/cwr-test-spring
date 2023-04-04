@@ -18,17 +18,17 @@
     <!-- Home Page  -->
     <definition name="homePage" extends="layout.basic">
         <put-attribute name="title" value="Home Page"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/home.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/home/home.jsp"/>
     </definition>
     <!-- type Page  -->
     <definition name="typePage" extends="layout.basic">
         <put-attribute name="title" value="Type Page"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/type.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/home/type.jsp"/>
     </definition>
     <!-- post Page  -->
     <definition name="postDetailPage" extends="layout.basic">
         <put-attribute name="title" value="Post Page"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/post.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/home/post.jsp"/>
     </definition>
 
     <!-- view Page  -->

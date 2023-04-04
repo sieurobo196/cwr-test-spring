@@ -15,9 +15,10 @@ import java.util.Objects;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = { "/home"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/","/home"}, method = RequestMethod.GET)
     public String homePage(Model model) {
-        model.addAttribute("showMenu", false);
+
+        model.addAttribute("showMenu", true);
         List<PostTypeDto> postTypeDtoList = new ArrayList<>();
         PostTypeDto java = PostTypeDto.builder().name("java").type("java").description("language java").build();
         PostTypeDto css = PostTypeDto.builder().name("css").type("css").description("language css").build();
@@ -30,7 +31,7 @@ public class MainController {
         return "homePage";
     }
 
-    @RequestMapping(value = {"/main/{type}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/list/{type}"}, method = RequestMethod.GET)
     public String getTypePost(Model model, @PathVariable String type) {
         model.addAttribute("showMenu", true);
         List<PostDto> postDtoList = new ArrayList<>();
@@ -54,7 +55,7 @@ public class MainController {
         return "typePage";
     }
 
-    @RequestMapping(value = {"/main/{type}/{url}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/post/{type}/{url}"}, method = RequestMethod.GET)
     public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
         model.addAttribute("showMenu", true);
         if (url.equalsIgnoreCase("begin-java1")) {
