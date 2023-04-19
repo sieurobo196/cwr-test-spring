@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.code</groupId>
-	<artifactId>codewr</artifactId>
-	<version>1</version>
+	<artifactId>ComCodewr</artifactId>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootHelloWorld</name>
+	<name>appCode</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
