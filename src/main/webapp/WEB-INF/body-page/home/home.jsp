@@ -1,14 +1,9 @@
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>--%>
-<%--<h2>List type post</h2>--%>
-<%--<div class="list-type-post">--%>
-<%--    <c:forEach  items="${list}" var ="typeDto">--%>
-<%--        <div>--%>
-<%--            <div><a href="${pageContext.request.contextPath}/list/${typeDto.type}">${typeDto.name}</a></div>--%>
-<%--            <div>----${typeDto.description}</div>--%>
-<%--        </div>--%>
-<%--    </c:forEach>--%>
-<%--</div>--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <div class="container">
-    <h1>Website maintained and coming soon</h1>
-    <img src="img/websites-maintained.jpg">
+    <div class="row text-left align-items-center">
+        <div class="col-sm-12 col-md-10 col-lg-10">
+            <h2 class="fs-1"><span class="text-green">Categories</span></h2>
+        </div>
+    </div>
 </div>

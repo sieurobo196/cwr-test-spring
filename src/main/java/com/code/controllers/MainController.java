@@ -28,12 +28,17 @@ public class MainController {
         postTypeDtoList.add(html);
         model.addAttribute("title", "Home");
         model.addAttribute("list", postTypeDtoList);
-        return "homePage";
+        return "indexPage";
     }
-    @RequestMapping({"/*","/*/*","/*/*/*"})
+    @RequestMapping({"/*/*","/*/*/*"})
     public String defaultHandler() {
         // Chuyển hướng đến trang home
         return "redirect:/";
+    }
+    @RequestMapping("/home")
+    public String homePage() {
+        // Chuyển hướng đến trang home
+        return "homePage";
     }
 
 //    @RequestMapping(value = {"/list/{type}"}, method = RequestMethod.GET)
