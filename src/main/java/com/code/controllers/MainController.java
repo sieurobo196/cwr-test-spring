@@ -15,7 +15,7 @@ import java.util.Objects;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = { "/","/home","/{path:[^\\.]*}"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/"}, method = RequestMethod.GET)
     public String homePage(Model model) {
 
         model.addAttribute("showMenu", true);
@@ -29,6 +29,11 @@ public class MainController {
         model.addAttribute("title", "Home");
         model.addAttribute("list", postTypeDtoList);
         return "homePage";
+    }
+    @RequestMapping({"/*","/*/*","/*/*/*"})
+    public String defaultHandler() {
+        // Chuyển hướng đến trang home
+        return "redirect:/";
     }
 
 //    @RequestMapping(value = {"/list/{type}"}, method = RequestMethod.GET)
