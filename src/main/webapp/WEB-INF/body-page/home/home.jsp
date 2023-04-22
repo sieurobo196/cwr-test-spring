@@ -10,5 +10,5 @@
 <%--</div>--%>
 <div class="container">
     <h1>Website maintained and coming soon</h1>
-    <img src="${pageContext.request.contextPath}/websites-maintained.jpg">
+    <img src="${pageContext.request.contextPath}/maintain.jpg">
 </div>
