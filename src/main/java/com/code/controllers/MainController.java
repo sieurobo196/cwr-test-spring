@@ -1,5 +1,6 @@
 package com.code.controllers;
 
+import com.code.model.LanguageDto;
 import com.code.model.PostDto;
 import com.code.model.PostTypeDto;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,8 @@ import java.util.Objects;
 @Controller
 public class MainController {
 
-    @RequestMapping(value = { "/"}, method = RequestMethod.GET)
-    public String homePage(Model model) {
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String indexPage(Model model) {
 
         model.addAttribute("showMenu", true);
         List<PostTypeDto> postTypeDtoList = new ArrayList<>();
@@ -35,11 +36,50 @@ public class MainController {
         // Chuyển hướng đến trang home
         return "redirect:/";
     }
-    @RequestMapping("/home")
-    public String homePage() {
-        // Chuyển hướng đến trang home
-        return "homePage";
-    }
+
+//    @RequestMapping("/home")
+//    public String homePage(Model model) {
+//        // Chuyển hướng đến trang home
+//        model.addAttribute("showMenu", true);
+//        List<LanguageDto> languageDtos = new ArrayList<>();
+//        languageDtos.add(LanguageDto.builder()
+//                .name("JAVA")
+//                .description("Java is a high-level, object-oriented programming language." +
+//                        "Java is used to develop mobile apps, web apps, desktop apps, games and much more.")
+//                .url("java").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("CSS")
+//                .description("CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation of a document written in HTML  or XML")
+//                .url("css").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("HTML")
+//                .description("HTML stands for Hypertext Markup Language. It is the standard markup language used to create web pages and is the backbone of the World Wide Web.")
+//                .url("html").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("JAVASCRIPT")
+//                .description("JavaScript is a popular high-level programming language that is primarily used for creating dynamic and interactive web pages.")
+//                .url("javascript").build());
+//        model.addAttribute("languageDtos", languageDtos);
+//        languageDtos.add(LanguageDto.builder()
+//                .name("TYPESCRIPT")
+//                .description("TypeScript is an open-source programming language that is a superset of JavaScript")
+//                .url("javascript").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("SPRING")
+//                .description("Spring is an open-source application framework for building enterprise-level Java applications.")
+//                .url("spring").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("ANDROID")
+//                .description("Android is an open-source operating system designed primarily for mobile devices, such as smartphones and tablets.")
+//                .url("android").build());
+//        languageDtos.add(LanguageDto.builder()
+//                .name("FLUTTER")
+//                .description("Flutter is an open-source mobile application development framework created by Google.")
+//                .url("flutter").build());
+//
+//        model.addAttribute("languageDtos", languageDtos);
+//        return "homePage";
+//    }
 
 //    @RequestMapping(value = {"/list/{type}"}, method = RequestMethod.GET)
 //    public String getTypePost(Model model, @PathVariable String type) {

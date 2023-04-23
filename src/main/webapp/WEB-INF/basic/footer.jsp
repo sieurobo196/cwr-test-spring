@@ -1,9 +1,12 @@
-<%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"--%>
-<%--	pageEncoding="ISO-8859-1"%>--%>
-
-<%--<div--%>
-<%--		style="background: #E0E0E0; text-align: center; padding: 5px; margin-top: 10px;">--%>
-
-<%--	@Copyright codewr.org--%>
-
-<%--</div>--%>
+<style>
+    .text-center {
+        text-align: center;
+    }
+</style>
+<div class="container">
+    <div class="row g-4">
+        <div class="col-lg-12 text-center">
+            <p>Copyright 2018 by Codewr.com</p>
+        </div>
+    </div>
+</div>
