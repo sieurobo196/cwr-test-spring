@@ -13,16 +13,8 @@
     <div class="header">
         <tiles:insertAttribute name="header"/>
     </div>
-    <div class="container">
-        <c:if test="${showMenu}">
-            <div class="menu">
-                <tiles:insertAttribute name="menu"/>
-            </div>
-        </c:if>
-
-        <div class="main-body">
-            <tiles:insertAttribute name="body"/>
-        </div>
+    <div class="main-body">
+        <tiles:insertAttribute name="body"/>
     </div>
     <div class="footer">
         <tiles:insertAttribute name="footer"/>

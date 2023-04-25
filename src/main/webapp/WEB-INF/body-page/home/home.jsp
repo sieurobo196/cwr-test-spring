@@ -5,7 +5,7 @@
         border-radius: 20px;
         padding: 10px;
         margin-bottom: 20px;
-        height: 250px;
+        height: 300px;
     }
 
     .item-language > h2, p {
@@ -29,7 +29,7 @@
                 <div class="item-language">
                     <h2>${languageDto.name}</h2>
                     <p>${languageDto.description}</p>
-                    <div class="button-learn"><a class="btn btn-primary" href="${pageContext.request.contextPath}/${languageDto.url}/detail">Learning now >></a></div>
+                    <div class="button-learn"><a class="btn btn-primary" href="${pageContext.request.contextPath}/${languageDto.url}">Learning now >></a></div>
                 </div>
             </div>
         </c:forEach>

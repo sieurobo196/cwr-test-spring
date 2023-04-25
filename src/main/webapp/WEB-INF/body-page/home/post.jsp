@@ -1,35 +1,55 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <style>
-    .list-posts-detail {
-        background: #eee !important;
+    .post-page {
+        background: #eeeeff;
     }
 
-    .list-posts-detail ul li {
-        font-size: 15px;
-        color: #000;
-        text-align: left;
-        display: block;
-        margin: 0px;
-        list-style: disc;
-        border-bottom: 1px dotted #bbb;
-        padding: 5px 0px;
+    .post-detail-content {
+        background: #fff;
+        padding-top: 20px;
+    }
+
+    .post-detail-content .title-post {
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .post-detail-content .content-post {
+        padding-top: 5px;
+    }
+    .left-menu-posts .current-chapter {
+        padding: 5px 10px;
+        border-bottom: 1px dotted;
+    }
+    .current-chapter.active {
+        font-weight: bold;
+    }
+    .heading {
+        font-size: 25px;
+        font-weight: bold;
+        color: red;
+        border-bottom: 2px solid #000 !important;
+    }
+    .row.post-page-custom {
+        margin: 0px !important;
     }
 </style>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 col-xl-3">
-            <div class="list-posts-detail">
-                <ul class="first-chapter">
-                    <li class="heading">Java Tutorial</li>
-                    <c:forEach items="${listPost}" var="post">
-                        <li class="current-chapter"><a href="${pageContext.request.contextPath}/${type}/${post.url}">${post.title}</a></li>
-                    </c:forEach>
-
-                </ul>
-            </div>
+<div class="post-page">
+    <div class="row post-page-custom">
+        <div class="col-sm-12 col-md-3 col-xl-3 left-menu-posts">
+            <div class="current-chapter heading"> Tutorials</div>
+            <c:forEach items="${listPost}" var="post">
+                <div class="current-chapter ${post.url==url ? 'active' :''} ${post.id}"><a
+                        href="${pageContext.request.contextPath}/${type}/${post.url}">${post.title}</a></div>
+            </c:forEach>
         </div>
-        <div class="col-sm-12 col-md-8 col-xl-9">
-            content first post
+        <div class="col-sm-12 col-md-6 col-xl-6 post-detail-content">
+            <div class="title-post">${postDetail.title}</div>
+            <div class="content-post">${postDetail.content}</div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-xl-3 right-extend">
+
         </div>
     </div>
 </div>

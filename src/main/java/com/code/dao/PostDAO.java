@@ -50,7 +50,7 @@ public class PostDAO extends JdbcDaoSupport {
 
     public List<PostDto> listPost(String type) {
         // Select ba.Id, ba.Full_Name, ba.Balance From Bank_Account ba
-        String sql = "select * from codewr_com.articles where type=? order by id desc";
+        String sql = "select * from codewr_com.articles where type=? order by id";
 
         Object[] params = new Object[]{type};
         BankAccountMapper mapper = new BankAccountMapper();
@@ -62,6 +62,7 @@ public class PostDAO extends JdbcDaoSupport {
                         .url(rs.getString("map_url"))
                         .type(rs.getString("type"))
                         .title(rs.getString("title"))
+                        .content(rs.getString("content"))
                         .build());
             }
             return postDtoList;

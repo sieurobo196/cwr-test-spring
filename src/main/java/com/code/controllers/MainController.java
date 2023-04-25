@@ -23,25 +23,14 @@ public class MainController {
 
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String indexPage(Model model) {
-
-        model.addAttribute("showMenu", true);
-        List<PostTypeDto> postTypeDtoList = new ArrayList<>();
-        PostTypeDto java = PostTypeDto.builder().name("java").type("java").description("language java").build();
-        PostTypeDto css = PostTypeDto.builder().name("css").type("css").description("language css").build();
-        PostTypeDto html = PostTypeDto.builder().name("html").type("html").description("language html").build();
-        postTypeDtoList.add(java);
-        postTypeDtoList.add(css);
-        postTypeDtoList.add(html);
-        model.addAttribute("title", "Home");
-        model.addAttribute("list", postTypeDtoList);
-        return "indexPage";
+        return "redirect:/home";
     }
 
-    @RequestMapping({"/*/*", "/*/*/*"})
-    public String defaultHandler() {
-        // Chuyển hướng đến trang home
-        return "redirect:/";
-    }
+//    @RequestMapping({"/*/*", "/*/*/*"})
+//    public String defaultHandler() {
+//        // Chuyển hướng đến trang home
+//        return "redirect:/";
+//    }
 
     @RequestMapping("/home")
     public String homePage(Model model) {
@@ -59,9 +48,9 @@ public class MainController {
                 .description("CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation of a document written in HTML  or XML")
                 .url("css").build());
         languageDtos.add(LanguageDto.builder()
-                .name("HTML")
-                .description("HTML stands for Hypertext Markup Language. It is the standard markup language used to create web pages and is the backbone of the World Wide Web.")
-                .url("html").build());
+                .name("PYTHON")
+                .description("Python is a high-level, interpreted programming language that is widely used for a variety of purposes, including web development, data analysis, machine learning, artificial intelligence, scientific computing.")
+                .url("python").build());
         languageDtos.add(LanguageDto.builder()
                 .name("JAVASCRIPT")
                 .description("JavaScript is a popular high-level programming language that is primarily used for creating dynamic and interactive web pages.")
@@ -106,14 +95,27 @@ public class MainController {
         return "homePage";
     }
 
-    @RequestMapping(value = {"/{type}/detail"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/{type}"}, method = RequestMethod.GET)
     public String getTypePost(Model model, @PathVariable String type) {
         System.out.println("get list post");
         List<PostDto> listPost = postDAO.listPost(type + "-en");
-        model.addAttribute("type", type);
+        if (listPost.size() == 0) {
+            return "redirect:/";
+        }
+        String url = listPost.get(0).getUrl();
+        return "redirect:/" + type + "/" + url;
+    }
+
+    @RequestMapping(value = {"/{type}/{url}"}, method = RequestMethod.GET)
+    public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
+        System.out.println("get post:" + url);
+        List<PostDto> listPost = postDAO.listPost(type + "-en");
+        PostDto postDto = listPost.stream().filter(item -> (item.getUrl().equalsIgnoreCase(url))).findFirst().get();
         model.addAttribute("listPost", listPost);
+        model.addAttribute("postDetail", postDto);
         return "listPostPage";
     }
+
 //
 //    @RequestMapping(value = {"/post/{type}/{url}"}, method = RequestMethod.GET)
 //    public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
