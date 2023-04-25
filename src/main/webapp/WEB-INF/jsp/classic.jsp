@@ -13,7 +13,7 @@
     <div class="header">
         <tiles:insertAttribute name="header"/>
     </div>
-    <div class="body-content">
+    <div class="container">
         <c:if test="${showMenu}">
             <div class="menu">
                 <tiles:insertAttribute name="menu"/>

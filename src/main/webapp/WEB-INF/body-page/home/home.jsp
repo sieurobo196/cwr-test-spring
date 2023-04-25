@@ -17,16 +17,19 @@
         position: absolute;
         right: 70px;
     }
+    .container.css-main {
+        padding: 15px;
+        background-color: #eef;
+    }
 </style>
-<div class="container">
+<div class="container css-main">
     <div class="row">
         <c:forEach items="${languageDtos}" var="languageDto">
             <div class="col-sm-6 col-md-4 col-xl-3">
                 <div class="item-language">
                     <h2>${languageDto.name}</h2>
                     <p>${languageDto.description}</p>
-                    <div class="button-learn"><a class="btn btn-primary" href="#">Learning now >></a></div>
-
+                    <div class="button-learn"><a class="btn btn-primary" href="${pageContext.request.contextPath}/${languageDto.url}/detail">Learning now >></a></div>
                 </div>
             </div>
         </c:forEach>

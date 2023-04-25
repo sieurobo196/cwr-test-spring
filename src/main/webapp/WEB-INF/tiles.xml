@@ -24,65 +24,72 @@
         <put-attribute name="title" value="Home Page"/>
         <put-attribute name="body" value="/WEB-INF/body-page/home/home.jsp"/>
     </definition>
-    <!-- type Page  -->
-    <definition name="typePage" extends="layout.basic">
-        <put-attribute name="title" value="Type Page"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/home/type.jsp"/>
-    </definition>
-    <!-- post Page  -->
-    <definition name="postDetailPage" extends="layout.basic">
+    <!-- list post Page  -->
+    <definition name="listPostPage" extends="layout.basic">
         <put-attribute name="title" value="Post Page"/>
         <put-attribute name="body" value="/WEB-INF/body-page/home/post.jsp"/>
     </definition>
 
-    <!-- view Page  -->
-    <definition name="viewPage" extends="layout.basic">
-        <put-attribute name="title" value="Home Page"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/home.jsp"/>
-    </definition>
 
-    <!-- ContactUs Page -->
-    <definition name="contactusPage" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/contact.jsp"/>
+    <!-- type Page  -->
+<!--    <definition name="typePage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Type Page"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/home/type.jsp"/>-->
+<!--    </definition>-->
+<!--    &lt;!&ndash; post Page  &ndash;&gt;-->
+<!--    <definition name="postDetailPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Post Page"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/home/post.jsp"/>-->
+<!--    </definition>-->
 
-    </definition>
-    <definition name="adminPage" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/admin.jsp"/>
+<!--    &lt;!&ndash; view Page  &ndash;&gt;-->
+<!--    <definition name="viewPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Home Page"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/home.jsp"/>-->
+<!--    </definition>-->
 
-    </definition>
-    <definition name="loginPage" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/login.jsp"/>
+<!--    &lt;!&ndash; ContactUs Page &ndash;&gt;-->
+<!--    <definition name="contactusPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/contact.jsp"/>-->
 
-    </definition>
-    <definition name="userInfoPage" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/user-info.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="adminPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/admin.jsp"/>-->
 
-    </definition>
-    <definition name="403Page" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/403.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="loginPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/login.jsp"/>-->
 
-    </definition>
-    <definition name="accountPage" extends="layout.basic">
-        <put-attribute name="body" value="/WEB-INF/body-page/bank/accountsPage.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="userInfoPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/user-info.jsp"/>-->
 
-    </definition>
-    <definition name="sendMoneyPage" extends="layout.basic">
-        <put-attribute name="title" value="Contact Us"/>
-        <put-attribute name="body" value="/WEB-INF/body-page/bank/sendMoneyPage.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="403Page" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/403.jsp"/>-->
 
-    </definition>
-    <definition name="postTypePage" extends="layout.basic">
-        <put-attribute name="body" value="/WEB-INF/body-page/post/postTypePage.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="accountPage" extends="layout.basic">-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/bank/accountsPage.jsp"/>-->
 
-    </definition>
-    <definition name="listPostPage" extends="layout.basic">
-        <put-attribute name="body" value="/WEB-INF/body-page/post/listPostPage.jsp"/>
+<!--    </definition>-->
+<!--    <definition name="sendMoneyPage" extends="layout.basic">-->
+<!--        <put-attribute name="title" value="Contact Us"/>-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/bank/sendMoneyPage.jsp"/>-->
 
-    </definition>
+<!--    </definition>-->
+<!--    <definition name="postTypePage" extends="layout.basic">-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/post/postTypePage.jsp"/>-->
+
+<!--    </definition>-->
+<!--    <definition name="listPostPage" extends="layout.basic">-->
+<!--        <put-attribute name="body" value="/WEB-INF/body-page/post/listPostPage.jsp"/>-->
+
+<!--    </definition>-->
 
 </tiles-definitions>
