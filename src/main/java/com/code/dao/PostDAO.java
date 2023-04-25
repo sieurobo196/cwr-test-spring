@@ -50,7 +50,7 @@ public class PostDAO extends JdbcDaoSupport {
 
     public List<PostDto> listPost(String type) {
         // Select ba.Id, ba.Full_Name, ba.Balance From Bank_Account ba
-        String sql = "select * from codewr_com.articles where type=? order by id";
+        String sql = "select * from codewr_com.articles where isDeleted=0 and isSubmit=0 and type=? order by id";
 
         Object[] params = new Object[]{type};
         BankAccountMapper mapper = new BankAccountMapper();

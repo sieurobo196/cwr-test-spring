@@ -26,11 +26,6 @@ public class MainController {
         return "redirect:/home";
     }
 
-//    @RequestMapping({"/*/*", "/*/*/*"})
-//    public String defaultHandler() {
-//        // Chuyển hướng đến trang home
-//        return "redirect:/";
-//    }
 
     @RequestMapping("/home")
     public String homePage(Model model) {
@@ -116,28 +111,5 @@ public class MainController {
         return "listPostPage";
     }
 
-//
-//    @RequestMapping(value = {"/post/{type}/{url}"}, method = RequestMethod.GET)
-//    public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
-//        model.addAttribute("showMenu", true);
-//        if (url.equalsIgnoreCase("begin-java1")) {
-//
-//            model.addAttribute("postDetail", PostDto.builder().id(1).name("begin java 1").url("begin-java1").
-//                    content("i write something about java").build());
-//        } else {
-//            model.addAttribute("postDetail", PostDto.builder().id(1).name("begin css 1").url("begin-css1")
-//                    .content("i write something about css").build());
-//        }
-//
-//        return "postDetailPage";
-//    }
-//
-//    @RequestMapping(value = {"/contactus"}, method = RequestMethod.GET)
-//    public String contactusPage(Model model) {
-//        model.addAttribute("address", "Vietnam");
-//        model.addAttribute("phone", "...");
-//        model.addAttribute("email", "...");
-//        return "contactusPage";
-//    }
 
 }
