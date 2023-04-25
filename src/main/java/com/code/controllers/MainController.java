@@ -111,5 +111,14 @@ public class MainController {
         return "listPostPage";
     }
 
+    @RequestMapping(value = {"/edit/{id}/{pass}"}, method = RequestMethod.GET)
+    public String editPostDetail(Model model, @PathVariable Integer id, @PathVariable String pass) {
+        if (!pass.equalsIgnoreCase("admin@123456")) {
+            return "redirect:/";
+        }
+        PostDto postDto = postDAO.postDetailById(id);
+        model.addAttribute("postDetail", postDto);
+        return "editPostPage";
+    }
 
 }

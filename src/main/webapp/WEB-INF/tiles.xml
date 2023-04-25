@@ -30,6 +30,18 @@
         <put-attribute name="body" value="/WEB-INF/body-page/home/post.jsp"/>
     </definition>
 
+    <!-- new post Page  -->
+    <definition name="new-article" extends="layout.basic">
+        <put-attribute name="title" value="Post Page"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/home/add-post.jsp"/>
+    </definition>
+
+    <!-- edit post Page  -->
+    <definition name="edit-article" extends="layout.basic">
+        <put-attribute name="title" value="Post Page"/>
+        <put-attribute name="body" value="/WEB-INF/body-page/home/edit-post.jsp"/>
+    </definition>
+
 
     <!-- type Page  -->
 <!--    <definition name="typePage" extends="layout.basic">-->
