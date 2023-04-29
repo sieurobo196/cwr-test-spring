@@ -94,6 +94,7 @@ public class MainController {
     public String getTypePost(Model model, @PathVariable String type) {
         System.out.println("get list post");
         List<PostDto> listPost = postDAO.listPost(type + "-en");
+        System.out.println("size list" + listPost.size());
         if (listPost.size() == 0) {
             return "redirect:/";
         }
@@ -103,9 +104,10 @@ public class MainController {
 
     @RequestMapping(value = {"/{type}/{url}"}, method = RequestMethod.GET)
     public String getPostDetail(Model model, @PathVariable String type, @PathVariable String url) {
-        System.out.println("get post:" + url);
+        System.out.println("get post:" + type + "/" + url);
         List<PostDto> listPost = postDAO.listPost(type + "-en");
         PostDto postDto = listPost.stream().filter(item -> (item.getUrl().equalsIgnoreCase(url))).findFirst().get();
+        System.out.println("post title:" + postDto.getTitle());
         model.addAttribute("listPost", listPost);
         model.addAttribute("postDetail", postDto);
         return "listPostPage";
