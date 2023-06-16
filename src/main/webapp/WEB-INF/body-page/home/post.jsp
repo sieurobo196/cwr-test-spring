@@ -44,12 +44,10 @@
                         href="${pageContext.request.contextPath}/${type}/${post.url}">${post.title}</a></div>
             </c:forEach>
         </div>
-        <div class="col-sm-12 col-md-6 col-xl-6 post-detail-content">
+        <div class="col-sm-12 col-md-9 col-xl-9 post-detail-content">
             <div class="title-post">${postDetail.title}</div>
             <div class="content-post">${postDetail.content}</div>
         </div>
-        <div class="col-sm-12 col-md-3 col-xl-3 right-extend">
-
-        </div>
+       
     </div>
 </div>
