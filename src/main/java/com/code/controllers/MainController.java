@@ -4,6 +4,11 @@ import com.code.dao.PostDAO;
 import com.code.model.LanguageDto;
 import com.code.model.PostDto;
 import com.code.model.PostTypeDto;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -89,17 +94,31 @@ public class MainController {
         model.addAttribute("languageDtos", languageDtos);
         return "homePage";
     }
-
-    @RequestMapping(value = {"/{type}"}, method = RequestMethod.GET)
-    public String getTypePost(Model model, @PathVariable String type) {
-        System.out.println("get list post");
-        List<PostDto> listPost = postDAO.listPost(type + "-en");
-        System.out.println("size list" + listPost.size());
-        if (listPost.size() == 0) {
-            return "redirect:/";
+    
+    @RequestMapping(value = "/{type}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getTypePost(@PathVariable String type) {
+        if (type.equals("ads.txt")) {
+            try {
+                Resource resource = new ClassPathResource("static/ads.txt");
+                return ResponseEntity.ok()
+                        .contentType(MediaType.TEXT_PLAIN)
+                        .body(resource.getInputStream().readAllBytes());
+            } catch (Exception e) {
+                // Xử lý lỗi nếu cần
+                return ResponseEntity.notFound().build();
+            }
+        } else {
+            System.out.println("get list post");
+            List<PostDto> listPost = postDAO.listPost(type + "-en");
+            System.out.println("size list: " + listPost.size());
+            if (listPost.size() == 0) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            String url = listPost.get(0).getUrl();
+            return ResponseEntity.status(HttpStatus.FOUND)
+                    .header("Location", "/" + type + "/" + url)
+                    .build();
         }
-        String url = listPost.get(0).getUrl();
-        return "redirect:/" + type + "/" + url;
     }
 
     @RequestMapping(value = {"/{type}/{url}"}, method = RequestMethod.GET)
